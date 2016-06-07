@@ -25,7 +25,7 @@ distclean:
 
 $(DEPS)/zeromq3:
 	@mkdir -p $(DEPS)
-	@curl http://download.zeromq.org/zeromq-$(ZEROMQ_VERSION).tar.gz -o $(DEPS)/zeromq-$(ZEROMQ_VERSION).tar.gz
+	@wget https://github.com/zeromq/zeromq3-x/releases/download/v$(ZEROMQ_VERSION)/zeromq-$(ZEROMQ_VERSION).tar.gz -O $(DEPS)/zeromq-$(ZEROMQ_VERSION).tar.gz
 	@cd $(DEPS) && tar xzvfp zeromq-$(ZEROMQ_VERSION).tar.gz && mv zeromq-$(ZEROMQ_VERSION) zeromq3
 
 $(DEPS)/zeromq3/src/.libs/libzmq.a: $(DEPS)/zeromq3
